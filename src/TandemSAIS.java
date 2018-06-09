@@ -16,8 +16,8 @@ public class TandemSAIS {
 		int length  = sequence.length();
 		int[] result = sais.makeSuffixArrayByInducedSorting(sequence,256);
 		String[] suffixes = new String[length];
-		for(int i=0;i<length;i++){
-			suffixes[i] = sequence.substring(result[i], length);
+		for(int i=1;i<result.length;i++){
+			suffixes[i-1] = sequence.substring(result[i], length);
 		}
 		int maxLength = 0;
 		HashSet<String> lrs= new HashSet<String>();
